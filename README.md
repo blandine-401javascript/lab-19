@@ -8,16 +8,15 @@
 ### Links and Resources
 
 
-- pickup:  new order needs to be delivered
+- queue-server:   will hold your queue server, running on port 3001. It should store some object/array containing the different queues in the system. When sockets connect to this socket server, a few actions should take place:
 
-- in-transit: order  in the process of being delivered
+- api server: This application will be both an Express API server running on port 3000 and a socket client connected to the queue server. It should have one primary route defined
 
-- delivered: order has been delivered
-
-- Application should generate random orders every 5 seconds, with store, id, customer, and address as the order data.
+- vendor01 and vendor 02: You will have two applications representing two different vendors.
 
 
-- [submission PR]()
+
+- [submission PR](https://github.com/blandine-401javascript/lab-19/pull/1)
 
 
 ### Setup
@@ -27,12 +26,18 @@
 
 #### Tets
 
-* Units test: 'npm test'
 
 
 
-- How do you run app?
-  -  open 3 console:
+
+- How to use your library?
+  -  open 4 console:
+    - run nodemon api.js
+    - run nodemon queue-sever.js
+    - run nodemon vendor-01.js
+    - run nodemon  vendor-02.js
+
+    use postman as a client to see the output in the console,
     
      
  
